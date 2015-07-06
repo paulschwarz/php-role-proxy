@@ -6,11 +6,11 @@ use example\Entity\User;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class FriendSpec extends ObjectBehavior
+class MyselfSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('example\Role\User\Friend');
+        $this->shouldHaveType('example\Role\User\Myself');
     }
 
     function let()
@@ -21,26 +21,17 @@ class FriendSpec extends ObjectBehavior
         $this->beConstructedWith($user);
     }
 
-    function it_has_readable_fields()
-    {
-        $this->getReadable()->shouldReturn(['name']);
-    }
-
     function it_should_be_able_to_get_readable_fields()
     {
         $this->name->shouldBe('Bob');
+        $this->password->shouldBe('p@ssw0rd');
     }
 
-    function it_should_not_be_able_to_get_unreadable_fields()
-    {
-        $this->password->shouldBe(NULL);
-    }
-
-    function it_should_not_be_able_to_set_unwriteable_fields()
+    function it_should_be_able_to_set_writeable_fields()
     {
         $this->name = 'Bobby';
         $this->password = 's3cr3t';
-        $this->name->shouldBe('Bob');
-        $this->password->shouldBe(NULL);
+        $this->name->shouldBe('Bobby');
+        $this->password->shouldBe('s3cr3t');
     }
 }

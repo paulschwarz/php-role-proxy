@@ -6,7 +6,9 @@ class Proxy
 {
     private $entity;
 
-    protected $readable = [];
+    protected
+        $readable = [],
+        $writeable = [];
 
     public function __construct($entity)
     {
@@ -20,7 +22,10 @@ class Proxy
 
     public function __set($name, $value)
     {
-        $this->entity->{$name} = $value;
+        if (in_array($name, $this->writeable))
+        {
+            $this->entity->{$name} = $value;
+        }
     }
 
     public function getReadable()
