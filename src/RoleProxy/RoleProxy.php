@@ -2,7 +2,7 @@
 
 namespace RoleProxy;
 
-class Proxy
+class RoleProxy
 {
     private $entity;
 
