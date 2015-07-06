@@ -10,7 +10,7 @@ class ProxySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('RoleProxy\Proxy');
+        $this->shouldHaveType('RoleProxy\RoleProxy');
     }
 
     function let()

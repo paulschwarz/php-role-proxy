@@ -3,9 +3,9 @@
 namespace example\Role\User;
 
 use example\Entity\User;
-use RoleProxy\Proxy;
+use RoleProxy\RoleProxy;
 
-class Friend extends Proxy
+class Friend extends RoleProxy
 {
     protected $readable = [
         'name',
