@@ -15,23 +15,7 @@ class ProxySpec extends ObjectBehavior
 
     function let()
     {
-        $user = new User;
-        $user->name = 'Bob';
-        $user->password = 'p@ssw0rd';
-        $this->beConstructedWith($user);
+        $this->beConstructedWith(new User);
     }
 
-    function it_should_be_able_to_get_fields()
-    {
-        $this->name->shouldBe('Bob');
-        $this->password->shouldBe('p@ssw0rd');
-    }
-
-    function it_should_be_able_to_set_fields()
-    {
-        $this->name = 'Bobby';
-        $this->password = 's3cr3t';
-        $this->name->shouldBe('Bobby');
-        $this->password->shouldBe('s3cr3t');
-    }
 }
