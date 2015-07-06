@@ -1,0 +1,22 @@
+{
+    "name": "paulsschwarz/role-proxy",
+    "description": "Implements a proxy to give entities role-like access.",
+    "authors": [
+        {
+            "name": "Paul Schwarz",
+            "email": "paulsschwarz@gmail.com"
+        }
+    ],
+    "require": {},
+	"require-dev": {
+		"phpspec/phpspec": "~2.0"
+	},
+	"config": {
+		"bin-dir": "bin"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "src"
+		}
+	}
+}
